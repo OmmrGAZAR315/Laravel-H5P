@@ -1,11 +1,10 @@
-
 (function ($) {
     ns.initResultsListener = function () {
 
         H5P.externalDispatcher.on('xAPI', function (event) {
             console.log(event.data.statement);
 
-            if(event.data.statement.result || event.data.statement.verb.id == "http://adlnet.gov/expapi/verbs/attempted"){
+            if (event.data.statement.result || event.data.statement.verb.id == "http://adlnet.gov/expapi/verbs/attempted") {
 
                 var idCurrent = event.data.statement.object.id;
 
@@ -36,7 +35,6 @@
                 }*/
 
 
-
             }
         });
 
@@ -46,40 +44,37 @@
 
         //iframeH5P.externalDispatcher.on('domChanged', function (e) {
 
-            if(iframeH5P && iframeH5P.instances[0]){
-                var iframeVideo = iframeH5P.instances[0].video;
-                iframeVideo.on('stateChange', function (event) {
-                    switch (event.data) {
-                        case iframeH5P.Video.ENDED:
-                            console.log('Video ended after ' + iframeVideo.getCurrentTime() + ' seconds!');
-                            // Start over again?
-                            //iframeVideo.play();
+        if (iframeH5P && iframeH5P.instances[0]) {
+            var iframeVideo = iframeH5P.instances[0].video;
+            iframeVideo.on('stateChange', function (event) {
+                switch (event.data) {
+                    case iframeH5P.Video.ENDED:
+                        console.log('Video ended after ' + iframeVideo.getCurrentTime() + ' seconds!');
+                        // Start over again?
+                        //iframeVideo.play();
 
-                            if (iframeVideo.getDuration() > 15) {
-                               // iframeVideo.seek(10);
-                            }
+                        if (iframeVideo.getDuration() > 15) {
+                            // iframeVideo.seek(10);
+                        }
                         break;
 
-                        case iframeH5P.Video.PLAYING:
-                            console.log('Playing');
-                            break;
+                    case iframeH5P.Video.PLAYING:
+                        console.log('Playing');
+                        break;
 
-                        case iframeH5P.Video.PAUSED:
-                            console.log('Why you stop?');
-                            //iframeVideo.setPlaybackRate(1.5); // Go fast
-                            break;
+                    case iframeH5P.Video.PAUSED:
+                        console.log('Why you stop?');
+                        //iframeVideo.setPlaybackRate(1.5); // Go fast
+                        break;
 
-                        case iframeH5P.Video.BUFFERING:
-                            console.log('Wait on your slow internet connection...');
-                            break;
-                    }
-                });
-            }
+                    case iframeH5P.Video.BUFFERING:
+                        console.log('Wait on your slow internet connection...');
+                        break;
+                }
+            });
+        }
         //});    
     }
-
-
-
 
 
     $(document).ready(ns.initResultsListener);
