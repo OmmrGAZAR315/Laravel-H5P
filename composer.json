@@ -18,7 +18,7 @@
     },
     "require": {
         "php": "^7.1",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^8.0",
         "laravelcollective/html": "*",
         "twbs/bootstrap-sass": "@stable",
         "h5p/h5p-core": "^1.24",
