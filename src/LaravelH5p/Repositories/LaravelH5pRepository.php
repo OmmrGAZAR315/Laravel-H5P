@@ -773,7 +773,7 @@ class LaravelH5pRepository implements H5PFrameworkInterface
     /**
      * Implements fetchExternalData.
      */
-    public function fetchExternalData($url, $data = null, $blocking = true, $stream = null)
+    public function fetchExternalData($url, $data = null, $blocking = true, $stream = null, $fullData = FALSE, $headers = array(), $files = array(), $method = 'POST')
     {
         @set_time_limit(0);
         $options = [
@@ -1040,5 +1040,25 @@ class LaravelH5pRepository implements H5PFrameworkInterface
                 $ct->owner, ]
             );
         }
+    }
+
+    public function replaceContentHubMetadataCache($metadata, $lang)
+    {
+        // TODO: Implement replaceContentHubMetadataCache() method.
+    }
+
+    public function getContentHubMetadataCache($lang = 'en')
+    {
+        // TODO: Implement getContentHubMetadataCache() method.
+    }
+
+    public function getContentHubMetadataChecked($lang = 'en')
+    {
+        // TODO: Implement getContentHubMetadataChecked() method.
+    }
+
+    public function setContentHubMetadataChecked($time, $lang = 'en')
+    {
+        // TODO: Implement setContentHubMetadataChecked() method.
     }
 }
