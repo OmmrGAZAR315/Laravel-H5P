@@ -17,22 +17,19 @@
         }
     },
     "require": {
-        "php": "^8.1",
-        "laravel/framework": "^10.0",
-        "laravelcollective/html": "*",
+        "php": "^8.4",
+        "laravel/framework": "^11.0|12.0",
         "twbs/bootstrap-sass": "@stable",
         "guzzlehttp/guzzle": "^7.0.1",
-        "h5p/h5p-core": "1.27",
-        "h5p/h5p-editor": "1.25"
+        "h5p/h5p-core": "^1.27",
+        "h5p/h5p-editor": "^1.25"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.8",
         "mockery/mockery": "1.2.*",
         "phpunit/phpunit": "9.6.23",
-        "kitloong/laravel-migrations-generator": "^6.11"
+        "omr_gz/laravel-migrations-generator": "8.x-dev"
     },
-
-     "extra": {
+    "extra": {
         "laravel": {
             "providers": [
                 "Djoudi\\LaravelH5p\\LaravelH5pServiceProvider"
@@ -42,5 +39,4 @@
             }
         }
     }
-
 }
